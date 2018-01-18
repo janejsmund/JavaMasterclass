@@ -21,5 +21,9 @@ public class Main {
 
         bank.listCustomers("Adelaide", false);
         bank.listCustomers("Sydney", true);
+
+        if (!bank.addCustomer("Melbourne", "Brian", 5.53)) {
+            System.out.println("Error Melbourne branch does not exist");
+        }
     }
 }
