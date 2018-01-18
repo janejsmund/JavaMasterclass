@@ -4,18 +4,23 @@ import java.util.ArrayList;
 
 public class Customer {
     private String name;
-    private ArrayList<Double> transactionAmounts;
+    private ArrayList<Double> transactions;
 
-    private Customer(String name) {
+    Customer(String name, double initialAmount) {
         this.name = name;
-        transactionAmounts = new ArrayList<>();
+        this.transactions = new ArrayList<>();
+        addTransaction(initialAmount);
     }
 
-    public Customer createCustomer(String name) {
-        return new Customer(name);
+    public void addTransaction(double amount) {
+        this.transactions.add(amount);
     }
 
-    public void addTransaction(double transactionAmount) {
-        transactionAmounts.add(transactionAmount);
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Double> getTransactions() {
+        return transactions;
     }
 }
